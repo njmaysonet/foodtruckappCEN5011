@@ -23,9 +23,9 @@ export default function Profile() {
                 <p> Your email is registered as: <b>{data.email}</b></p>
             </body>
             <br/>
-            <div className={style.signout}>
+            <div className={style.signOut}>
                 <footer>
-                    <button className={style.button} onClick={() => signOut()}>Sign out</button>
+                    <button className={style.button} onClick={() => signOut()}>Sign Out</button>
                 </footer>
             </div>
         </Layout> 

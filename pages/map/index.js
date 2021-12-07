@@ -40,7 +40,7 @@ class Map extends React.Component {
         const { markers } = this.state;
         markers.forEach((marker) => {
             new google.maps.Marker({
-                postition: marker,
+                position: marker,
                 map: this.map,
             });
         });

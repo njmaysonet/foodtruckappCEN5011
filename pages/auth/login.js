@@ -20,7 +20,15 @@ export default function Login() {
                 <button className={styles.button} onClick={() => handleClick()}>Go to Profile</button>
             </Link>
             <br />
-            <button className={styles.button} onClick={() => signOut()}>Sign out</button>
+            <Link href="/map" passHref>
+              <button className={styles.button} onClick={() => handleClick()}>Truck Map</button>
+            </Link>
+            <br />
+            <Link href="/truckowner" passHref>
+              <button className={styles.button} onClick={() => handleClick()}>Owner Registration</button>
+            </Link>
+            <br />
+            <button className={styles.button} onClick={() => signOut()}>Sign Out</button>
         </div>
       </Layout>
     )
