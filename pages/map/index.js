@@ -1,5 +1,11 @@
 import React from "react";
 import StyledMap from "./index.css"
+import styles from "../../styles/utils.module.css"
+import Link from "next/link"
+
+import useSWR from 'swr'
+
+const fetcher = (url) => fetch(url).then((res) => res.json())
 
 class Map extends React.Component {
     state = {
@@ -7,15 +13,18 @@ class Map extends React.Component {
             lat: 25.7617,
             lng: -80.1918,
         },
-        markers: [
-            {
-                lat: 25.794400,
-                lng: -80.197874,
-            }
-        ]
+        markers: [{
+            lat: 25.7402,
+            lng: -80.3431,
+        }]
     };
 
     componentDidMount() {
+        // fetch('localhost:3000/api/maptrucks')
+        // .then((response) => response.json())
+        // .then( trucks => {
+        //     this.setState({ markers: { lat: trucks.latitude, lng: trucks.longitude }})
+        // })
         document.body.classList.add("is-map");
         this.handleAttachGoogleMap();
     }
@@ -50,6 +59,13 @@ class Map extends React.Component {
         return (
             <StyledMap>
                 <div id="google-map" />
+                <Link href="/auth/login" passHref>
+                    <div className={styles.footer}>
+                        <footer>
+                            <button className={styles.button}>Main Menu</button>
+                        </footer>
+                    </div>
+                </Link>
             </StyledMap>
         );
     }

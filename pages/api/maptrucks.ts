@@ -6,10 +6,8 @@ const prisma = new PrismaClient();
 export default async function handle ( req, res ) {
 
     const session = await getSession({ req })
-    const profileData = await prisma.user.findUnique({
-        where: {
-            email: session.user.email
-        }
+    const profileData = await prisma.truck.findMany({
+        take: 3,
     });
     res.json(profileData)
 }

@@ -36,7 +36,7 @@ export default class extends Document {
 
     render() {
         const { styles } = this.props;
-        const apikey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+        const apiKey = process.env.GOOGLE_API_KEY;
     
         return (
           <Html lang="en">
@@ -45,7 +45,7 @@ export default class extends Document {
               <meta name="application-name" content="App" />
               ...
               <script
-                src={`https://maps.googleapis.com/maps/api/js?key=${apikey}&callback=initMap&libraries=&v=weekly`}
+                src={`https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=&v=weekly`}
                 async
               ></script>
             </Head>

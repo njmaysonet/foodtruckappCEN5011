@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Link from "next/link"
 import Image from "next/image"
 import Layout from "../components/layout"
 import style from "../styles/Profile.module.css"
@@ -23,9 +24,14 @@ export default function Profile() {
                 <p> Your email is registered as: <b>{data.email}</b></p>
             </body>
             <br/>
-            <div className={style.signOut}>
-                <footer>
-                    <button className={style.button} onClick={() => signOut()}>Sign Out</button>
+            <div>
+                <footer className={style.footer}>
+                    <Link href="auth/login" passHref>
+                        <button className={style.button}>Main Menu</button>
+                    </Link>
+                    <br />
+                    <br />
+                    <button className={style.button} onClick={() => signOut()}>Sign out</button>
                 </footer>
             </div>
         </Layout> 
