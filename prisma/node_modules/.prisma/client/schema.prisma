@@ -40,6 +40,8 @@ model Truck{
   description   String 
   ownerId       Int   
   truckOwner    TruckOwner @relation(fields: ownerId, references: id)
+  latitude      Float?
+  longitude     Float?
 }
 
 model TruckOwner {

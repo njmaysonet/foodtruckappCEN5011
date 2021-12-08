@@ -16,6 +16,10 @@ export default function Login() {
       <Layout>
         <div className={styles.main}>
             <p>You are signed in as <b>{session.user.email}</b></p> <br />
+            <Link href="/map" passHref>
+                <button className={styles.button} onClick={() => handleClick()}>Go to Map</button>
+            </Link>
+            <br />
             <Link href="/profile" passHref>
                 <button className={styles.button} onClick={() => handleClick()}>Go to Profile</button>
             </Link>
